@@ -1,5 +1,7 @@
 import { Box } from "@/components/ui/Box";
 import { Text } from "@/components/ui/Text";
+import * as Sentry from "@sentry/react-native";
+import { Button } from "react-native";
 
 export default function PublicScreen() {
   return (
@@ -10,6 +12,13 @@ export default function PublicScreen() {
       alignItems="center"
     >
       <Text>Public</Text>
+
+      <Button
+        title="Try!"
+        onPress={() => {
+          Sentry.captureException(new Error("First error"));
+        }}
+      />
     </Box>
   );
 }
