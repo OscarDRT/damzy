@@ -1,37 +1,56 @@
-import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Providers } from "@/providers";
+import { useAuth, useUser } from "@clerk/clerk-expo";
+import {
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_700Bold,
+  useFonts,
+} from "@expo-google-fonts/montserrat";
+import { Slot, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import "react-native-reanimated";
 
-import { ThemeProvider } from "@/providers/ThemeProvider";
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
-  const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+const InitalLayout = () => {
+  const [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_700Bold,
   });
 
+  const { isLoaded, isSignedIn } = useAuth();
+  const segments = useSegments();
+  const router = useRouter();
+  const user = useUser();
+
   useEffect(() => {
-    if (loaded) {
+    if (fontsLoaded) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [fontsLoaded]);
 
-  if (!loaded) {
-    return null;
-  }
+  useEffect(() => {
+    if (!isLoaded) return;
 
+    const inTabsGroup = segments[0] === "(private)";
+
+    if (isSignedIn && inTabsGroup) {
+      router.replace("/(private)");
+    } else if (!isSignedIn && inTabsGroup) {
+      router.replace("/(public)");
+    }
+  }, [isSignedIn]);
+
+  return <Slot />;
+};
+
+const RootLayoutNav = () => {
   return (
-    <ThemeProvider>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Providers>
+      <InitalLayout />
+    </Providers>
   );
-}
+};
+
+export default RootLayoutNav;
