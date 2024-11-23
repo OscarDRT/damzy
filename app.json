@@ -4,7 +4,7 @@
     "slug": "damzy",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "platforms": ["ios", "android"],
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
@@ -15,7 +15,12 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.oscardrtdev.damzy"
+      "bundleIdentifier": "com.oscardrtdev.damzy",
+      "icon": {
+        "light": "./assets/images/icon-light.png",
+        "dark": "./assets/images/icon-dark.png",
+        "tinted": "./assets/images/icon-tinted.png"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -35,7 +40,7 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
+          "imageWidth": 400,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
