@@ -1,18 +1,25 @@
 import { createTheme } from "@shopify/restyle";
 
 const palette = {
-  background: "#ffffff", // hsl(0, 0%, 100%)
-  foreground: "#1f1f1f", // hsl(240, 10%, 3.9%)
-  card: "#ffffff", // hsl(0, 0%, 100%)
-  cardForeground: "#1f1f1f", // hsl(240, 10%, 3.9%)
-  primary: "#1a1a1a", // hsl(240, 5.9%, 10%)
-  secondary: "#f3f3f3", // hsl(240, 4.8%, 95.9%)
-  muted: "#f3f3f3", // hsl(240, 4.8%, 95.9%)
-  accent: "#f3f3f3", // hsl(240, 4.8%, 95.9%)
-  destructive: "#eb4034", // hsl(0, 84.2%, 60.2%)
-  border: "#e5e5e5", // hsl(240, 5.9%, 90%)
-  input: "#e5e5e5", // hsl(240, 5.9%, 90%)
-  ring: "#1a1a1a", // hsl(240, 5.9%, 10%)
+  background: "#FFFFFF", // HSL(0, 0%, 100%)
+  foreground: "#09090B", // HSL(240, 10%, 3.9%)
+  card: "#FFFFFF", // HSL(0, 0%, 100%)
+  cardForeground: "#09090B", // HSL(240, 10%, 3.9%)
+  popover: "#FFFFFF", // HSL(0, 0%, 100%)
+  popoverForeground: "#09090B", // HSL(240, 10%, 3.9%)
+  primary: "#18181B", // HSL(240, 5.9%, 10%)
+  primaryForeground: "#FAFAFA", // HSL(0, 0%, 98%)
+  secondary: "#F3F3F5", // HSL(240, 4.8%, 95.9%)
+  secondaryForeground: "#18181B", // HSL(240, 5.9%, 10%)
+  muted: "#F3F3F5", // HSL(240, 4.8%, 95.9%)
+  mutedForeground: "#717179", // HSL(240, 3.8%, 46.1%)
+  accent: "#F3F3F5", // HSL(240, 4.8%, 95.9%)
+  accentForeground: "#18181B", // HSL(240, 5.9%, 10%)
+  destructive: "#EF4444", // HSL(0, 84.2%, 60.2%)
+  destructiveForeground: "#FAFAFA", // HSL(0, 0%, 98%)
+  border: "#E4E4E7", // HSL(240, 5.9%, 90%)
+  input: "#E4E4E7", // HSL(240, 5.9%, 90%)
+  ring: "#18181B", // HSL(240, 5.9%, 10%)
 };
 
 export const lightTheme = createTheme({
