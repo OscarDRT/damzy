@@ -41,6 +41,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "54e79489-d184-4396-a425-4cdb90861c2f"
+      }
+    },
+    "owner": "oscardrtdev"
   }
 }
