@@ -15,6 +15,7 @@ export const lightTheme = createTheme({
   },
   fonts,
   spacing: {
+    none: 0,
     xs: scale(4),
     s: scale(8),
     m: scale(12),
