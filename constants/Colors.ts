@@ -1,26 +1,46 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
-
-export const Colors = {
+export const colors: Record<"light" | "dark", ThemeColors> = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    transparent: "transparent",
+    background: "#FFFFFF", // HSL(0, 0%, 100%)
+    foreground: "#00210A", // HSL(224, 71.4%, 4.1%)
+    card: "#FFFFFF", // HSL(0, 0%, 100%)
+    cardForeground: "#00210A", // HSL(224, 71.4%, 4.1%)
+    popover: "#FFFFFF", // HSL(0, 0%, 100%)
+    popoverForeground: "#00210A", // HSL(224, 71.4%, 4.1%)
+    primary: "#684BDB", // HSL(262.1, 83.3%, 57.8%)
+    primaryForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    secondary: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
+    secondaryForeground: "#1B2D3E", // HSL(220.9, 39.3%, 11%)
+    muted: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
+    mutedForeground: "#6F7B8B", // HSL(220, 8.9%, 46.1%)
+    accent: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
+    accentForeground: "#1B2D3E", // HSL(220.9, 39.3%, 11%)
+    destructive: "#EF4444", // HSL(0, 84.2%, 60.2%)
+    destructiveForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    border: "#D6DEE8", // HSL(220, 13%, 91%)
+    input: "#D6DEE8", // HSL(220, 13%, 91%)
+    ring: "#684BDB", // HSL(262.1, 83.3%, 57.8%)
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    transparent: "transparent",
+    background: "#000A19", // HSL(224, 71.4%, 4.1%)
+    foreground: "#F6FBFF", // HSL(210, 20%, 98%)
+    card: "#000A19", // HSL(224, 71.4%, 4.1%)
+    cardForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    popover: "#000A19", // HSL(224, 71.4%, 4.1%)
+    popoverForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    primary: "#7A5FFF", // HSL(263.4, 70%, 50.4%)
+    primaryForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    secondary: "#2A3B4D", // HSL(215, 27.9%, 16.9%)
+    secondaryForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    muted: "#2A3B4D", // HSL(215, 27.9%, 16.9%)
+    mutedForeground: "#A3B0C0", // HSL(217.9, 10.6%, 64.9%)
+    accent: "#2A3B4D", // HSL(215, 27.9%, 16.9%)
+    accentForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    destructive: "#A52A2A", // HSL(0, 62.8%, 30.6%)
+    destructiveForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+    border: "#2A3B4D", // HSL(215, 27.9%, 16.9%)
+    input: "#2A3B4D", // HSL(215, 27.9%, 16.9%)
+    ring: "#7A5FFF", // HSL(263.4, 70%, 50.4%)
   },
 };

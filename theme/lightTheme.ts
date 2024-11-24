@@ -1,28 +1,6 @@
+import { colors } from "@/constants/Colors";
 import { scale } from "@/utils/responsive";
 import { createTheme } from "@shopify/restyle";
-
-const palette = {
-  transparent: "transparent",
-  background: "#FFFFFF", // HSL(0, 0%, 100%)
-  foreground: "#00210A", // HSL(224, 71.4%, 4.1%)
-  card: "#FFFFFF", // HSL(0, 0%, 100%)
-  cardForeground: "#00210A", // HSL(224, 71.4%, 4.1%)
-  popover: "#FFFFFF", // HSL(0, 0%, 100%)
-  popoverForeground: "#00210A", // HSL(224, 71.4%, 4.1%)
-  primary: "#684BDB", // HSL(262.1, 83.3%, 57.8%)
-  primaryForeground: "#F6FBFF", // HSL(210, 20%, 98%)
-  secondary: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
-  secondaryForeground: "#1B2D3E", // HSL(220.9, 39.3%, 11%)
-  muted: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
-  mutedForeground: "#6F7B8B", // HSL(220, 8.9%, 46.1%)
-  accent: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
-  accentForeground: "#1B2D3E", // HSL(220.9, 39.3%, 11%)
-  destructive: "#EF4444", // HSL(0, 84.2%, 60.2%)
-  destructiveForeground: "#F6FBFF", // HSL(210, 20%, 98%)
-  border: "#D6DEE8", // HSL(220, 13%, 91%)
-  input: "#D6DEE8", // HSL(220, 13%, 91%)
-  ring: "#684BDB", // HSL(262.1, 83.3%, 57.8%)
-};
 
 const fonts = {
   regular: "Montserrat_400Regular",
@@ -33,7 +11,7 @@ const fonts = {
 
 export const lightTheme = createTheme({
   colors: {
-    ...palette,
+    ...colors.light,
   },
   fonts,
   spacing: {
