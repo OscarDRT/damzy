@@ -5,7 +5,7 @@ import { useTheme } from "@/hooks/useTheme";
 import { scale } from "@/utils/responsive";
 import { List, LucideIcon, Mic, WifiOff } from "lucide-react-native";
 
-export default function PublicScreen() {
+export default function WelcomeScreen() {
   const { fonts, colors } = useTheme();
 
   return (
