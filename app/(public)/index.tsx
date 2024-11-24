@@ -4,11 +4,17 @@ import { Container } from "@/components/ui/Container";
 import { Text } from "@/components/ui/Text";
 import { useTheme } from "@/hooks/useTheme";
 import { scale } from "@/utils/responsive";
+import { useRouter } from "expo-router";
 import { List, LucideIcon, Mic, WifiOff } from "lucide-react-native";
-import { Alert } from "react-native";
 
 export default function WelcomeScreen() {
-  const { fonts, colors } = useTheme();
+  const { colors } = useTheme();
+
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    router.push("/login");
+  };
 
   return (
     <Container justifyContent="space-between">
@@ -34,12 +40,7 @@ export default function WelcomeScreen() {
       </Box>
 
       <Box>
-        <Button
-          label="Get Started"
-          onPress={() => {
-            Alert.alert("Get Started");
-          }}
-        />
+        <Button label="Get Started" onPress={handleGetStarted} />
       </Box>
     </Container>
   );

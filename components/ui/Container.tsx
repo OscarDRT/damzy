@@ -21,8 +21,8 @@ export const Container = ({
       backgroundColor="background"
       paddingHorizontal="l"
       style={{
-        paddingTop: safeArea ? insets.top + spacing.l : spacing.l,
-        paddingBottom: safeArea ? insets.bottom + spacing.l : spacing.l,
+        paddingTop: safeArea ? insets.top + spacing.l : undefined,
+        paddingBottom: safeArea ? insets.bottom + spacing.l : undefined,
       }}
       {...props}
     >

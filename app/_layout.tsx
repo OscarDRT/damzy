@@ -30,6 +30,7 @@ Sentry.init({
   attachScreenshot: true,
   debug: false,
   tracesSampleRate: 1.0,
+  profilesSampleRate: 1.0,
   _experiments: {
     profilesSampleRate: 1.0,
     replaysSessionSampleRate: 1.0,
