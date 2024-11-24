@@ -23,6 +23,7 @@
       }
     },
     "android": {
+      "icon": "./assets/images/icon-light.png",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -51,6 +52,12 @@
           "url": "https://sentry.io/",
           "project": "damzy",
           "organization": "oscar-ig"
+        }
+      ],
+      [
+        "expo-dev-launcher",
+        {
+          "launcherMode": "most-recent"
         }
       ]
     ],
