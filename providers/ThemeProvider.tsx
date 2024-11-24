@@ -1,6 +1,6 @@
+import { useColorScheme } from "@/hooks/useColorScheme";
 import { darkTheme, lightTheme } from "@/theme";
 import { ThemeProvider as RestyleThemeProvider } from "@shopify/restyle";
-import { useColorScheme } from "react-native";
 
 interface ThemeProviderProps {
   children: React.ReactNode;
