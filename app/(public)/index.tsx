@@ -1,9 +1,11 @@
 import { Box } from "@/components/ui/Box";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Text } from "@/components/ui/Text";
 import { useTheme } from "@/hooks/useTheme";
 import { scale } from "@/utils/responsive";
 import { List, LucideIcon, Mic, WifiOff } from "lucide-react-native";
+import { Alert } from "react-native";
 
 export default function WelcomeScreen() {
   const { fonts, colors } = useTheme();
@@ -32,7 +34,12 @@ export default function WelcomeScreen() {
       </Box>
 
       <Box>
-        <Text>Button here!</Text>
+        <Button
+          label="Get Started"
+          onPress={() => {
+            Alert.alert("Get Started");
+          }}
+        />
       </Box>
     </Container>
   );

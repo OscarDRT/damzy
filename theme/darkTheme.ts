@@ -1,6 +1,7 @@
 import { lightTheme, LightTheme } from "./lightTheme";
 
 const palette = {
+  transparent: "transparent",
   background: "#000A19", // HSL(224, 71.4%, 4.1%)
   foreground: "#F6FBFF", // HSL(210, 20%, 98%)
   card: "#000A19", // HSL(224, 71.4%, 4.1%)

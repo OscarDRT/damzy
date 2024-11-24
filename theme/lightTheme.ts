@@ -2,6 +2,7 @@ import { scale } from "@/utils/responsive";
 import { createTheme } from "@shopify/restyle";
 
 const palette = {
+  transparent: "transparent",
   background: "#FFFFFF", // HSL(0, 0%, 100%)
   foreground: "#00210A", // HSL(224, 71.4%, 4.1%)
   card: "#FFFFFF", // HSL(0, 0%, 100%)
@@ -42,6 +43,11 @@ export const lightTheme = createTheme({
     l: scale(16),
     xl: scale(20),
     xxl: scale(24),
+  },
+  borderRadii: {
+    s: scale(4),
+    m: scale(8),
+    l: scale(12),
   },
   textVariants: {
     defaults: {
@@ -102,6 +108,40 @@ export const lightTheme = createTheme({
       lineHeight: scale(14),
       fontFamily: "Montserrat_400Regular",
       color: "mutedForeground",
+    },
+  },
+  buttonVariants: {
+    defaults: {
+      backgroundColor: "primary",
+      borderRadius: "m",
+      height: scale(40),
+      paddingHorizontal: "l",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    destructive: {
+      backgroundColor: "destructive",
+      borderRadius: "m",
+    },
+    outline: {
+      borderWidth: 1,
+      borderColor: "border",
+      backgroundColor: "background",
+    },
+    secondary: {
+      backgroundColor: "secondary",
+      borderRadius: "m",
+    },
+    ghost: {
+      backgroundColor: "transparent",
+      borderRadius: "m",
+    },
+    link: {
+      backgroundColor: "transparent",
+      textDecorationLine: "underline",
+    },
+    disabled: {
+      backgroundColor: "muted",
     },
   },
 });
