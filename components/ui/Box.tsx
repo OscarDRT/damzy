@@ -13,5 +13,5 @@ import { createBox } from "@shopify/restyle";
  *
  * @see https://github.com/Shopify/restyle
  */
-
 export const Box = createBox<Theme>();
+export type BoxProps = React.ComponentProps<typeof Box>;

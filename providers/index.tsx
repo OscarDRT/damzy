@@ -1,3 +1,7 @@
+import {
+  SafeAreaProvider,
+  initialWindowMetrics,
+} from "react-native-safe-area-context";
 import { ClerkProvider } from "./ClerkProvider";
 import { ThemeProvider } from "./ThemeProvider";
 
@@ -8,7 +12,9 @@ interface ProvidersProps {
 export const Providers = ({ children }: ProvidersProps) => {
   return (
     <ThemeProvider>
-      <ClerkProvider>{children}</ClerkProvider>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <ClerkProvider>{children}</ClerkProvider>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 };

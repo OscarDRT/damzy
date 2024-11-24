@@ -3,6 +3,7 @@ import { useAuth, useUser } from "@clerk/clerk-expo";
 import {
   Montserrat_400Regular,
   Montserrat_500Medium,
+  Montserrat_600SemiBold,
   Montserrat_700Bold,
   useFonts,
 } from "@expo-google-fonts/montserrat";
@@ -15,6 +16,7 @@ import {
   useSegments,
 } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync();
@@ -41,6 +43,7 @@ const InitalLayout = () => {
   const [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
+    Montserrat_600SemiBold,
     Montserrat_700Bold,
   });
 
@@ -81,6 +84,7 @@ const RootLayoutNav = () => {
 
   return (
     <Providers>
+      <StatusBar backgroundColor="transparent" />
       <InitalLayout />
     </Providers>
   );

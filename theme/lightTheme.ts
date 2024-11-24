@@ -1,40 +1,108 @@
+import { scale } from "@/utils/responsive";
 import { createTheme } from "@shopify/restyle";
 
 const palette = {
   background: "#FFFFFF", // HSL(0, 0%, 100%)
-  foreground: "#09090B", // HSL(240, 10%, 3.9%)
+  foreground: "#00210A", // HSL(224, 71.4%, 4.1%)
   card: "#FFFFFF", // HSL(0, 0%, 100%)
-  cardForeground: "#09090B", // HSL(240, 10%, 3.9%)
+  cardForeground: "#00210A", // HSL(224, 71.4%, 4.1%)
   popover: "#FFFFFF", // HSL(0, 0%, 100%)
-  popoverForeground: "#09090B", // HSL(240, 10%, 3.9%)
-  primary: "#18181B", // HSL(240, 5.9%, 10%)
-  primaryForeground: "#FAFAFA", // HSL(0, 0%, 98%)
-  secondary: "#F3F3F5", // HSL(240, 4.8%, 95.9%)
-  secondaryForeground: "#18181B", // HSL(240, 5.9%, 10%)
-  muted: "#F3F3F5", // HSL(240, 4.8%, 95.9%)
-  mutedForeground: "#717179", // HSL(240, 3.8%, 46.1%)
-  accent: "#F3F3F5", // HSL(240, 4.8%, 95.9%)
-  accentForeground: "#18181B", // HSL(240, 5.9%, 10%)
+  popoverForeground: "#00210A", // HSL(224, 71.4%, 4.1%)
+  primary: "#684BDB", // HSL(262.1, 83.3%, 57.8%)
+  primaryForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+  secondary: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
+  secondaryForeground: "#1B2D3E", // HSL(220.9, 39.3%, 11%)
+  muted: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
+  mutedForeground: "#6F7B8B", // HSL(220, 8.9%, 46.1%)
+  accent: "#E9EEF8", // HSL(220, 14.3%, 95.9%)
+  accentForeground: "#1B2D3E", // HSL(220.9, 39.3%, 11%)
   destructive: "#EF4444", // HSL(0, 84.2%, 60.2%)
-  destructiveForeground: "#FAFAFA", // HSL(0, 0%, 98%)
-  border: "#E4E4E7", // HSL(240, 5.9%, 90%)
-  input: "#E4E4E7", // HSL(240, 5.9%, 90%)
-  ring: "#18181B", // HSL(240, 5.9%, 10%)
+  destructiveForeground: "#F6FBFF", // HSL(210, 20%, 98%)
+  border: "#D6DEE8", // HSL(220, 13%, 91%)
+  input: "#D6DEE8", // HSL(220, 13%, 91%)
+  ring: "#684BDB", // HSL(262.1, 83.3%, 57.8%)
+};
+
+const fonts = {
+  regular: "Montserrat_400Regular",
+  medium: "Montserrat_500Medium",
+  semiBold: "Montserrat_600SemiBold",
+  bold: "Montserrat_700Bold",
 };
 
 export const lightTheme = createTheme({
   colors: {
     ...palette,
   },
+  fonts,
   spacing: {
-    xs: 4,
-    s: 8,
-    m: 16,
-    l: 24,
-    xl: 40,
+    xs: scale(4),
+    s: scale(8),
+    m: scale(12),
+    l: scale(16),
+    xl: scale(20),
+    xxl: scale(24),
   },
   textVariants: {
-    defaults: {},
+    defaults: {
+      fontSize: scale(17),
+      lineHeight: scale(22),
+      fontFamily: "Montserrat_400Regular",
+      color: "foreground",
+    },
+    largeTitle: {
+      fontSize: scale(36),
+      lineHeight: scale(40),
+      fontFamily: "Montserrat_700Bold",
+    },
+    title1: {
+      fontSize: scale(30),
+      lineHeight: scale(34),
+      fontFamily: "Montserrat_600SemiBold",
+    },
+    title2: {
+      fontSize: scale(22),
+      lineHeight: scale(28),
+      fontFamily: "Montserrat_600SemiBold",
+    },
+    title3: {
+      fontSize: scale(20),
+      lineHeight: scale(26),
+      fontFamily: "Montserrat_500Medium",
+    },
+    heading: {
+      fontSize: scale(17),
+      lineHeight: scale(22),
+      fontFamily: "Montserrat_600SemiBold",
+    },
+    callout: {
+      fontSize: scale(16),
+      lineHeight: scale(20),
+      fontFamily: "Montserrat_400Regular",
+    },
+    subhead: {
+      fontSize: scale(15),
+      lineHeight: scale(22),
+      fontFamily: "Montserrat_500Medium",
+    },
+    footnote: {
+      fontSize: scale(13),
+      lineHeight: scale(18),
+      fontFamily: "Montserrat_400Regular",
+      color: "mutedForeground",
+    },
+    caption1: {
+      fontSize: scale(12),
+      lineHeight: scale(16),
+      fontFamily: "Montserrat_400Regular",
+      color: "mutedForeground",
+    },
+    caption2: {
+      fontSize: scale(11),
+      lineHeight: scale(14),
+      fontFamily: "Montserrat_400Regular",
+      color: "mutedForeground",
+    },
   },
 });
 
