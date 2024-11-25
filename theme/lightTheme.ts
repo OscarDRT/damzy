@@ -123,6 +123,15 @@ export const lightTheme = createTheme({
       backgroundColor: "muted",
     },
   },
+  cardVariants: {
+    defaults: {
+      backgroundColor: "card",
+      borderRadius: "m",
+      padding: "l",
+      borderWidth: 1,
+      borderColor: "border",
+    },
+  },
 });
 
 export type LightTheme = typeof lightTheme;

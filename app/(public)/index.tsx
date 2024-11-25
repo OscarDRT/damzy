@@ -7,7 +7,7 @@ import { scale } from "@/utils/responsive";
 import { useRouter } from "expo-router";
 import { List, LucideIcon, Mic, WifiOff } from "lucide-react-native";
 
-export default function WelcomeScreen() {
+const WelcomeScreen = () => {
   const { colors } = useTheme();
 
   const router = useRouter();
@@ -44,7 +44,7 @@ export default function WelcomeScreen() {
       </Box>
     </Container>
   );
-}
+};
 
 const FEATURES: {
   title: string;
@@ -70,3 +70,5 @@ const FEATURES: {
     icon: Mic,
   },
 ];
+
+export default WelcomeScreen;

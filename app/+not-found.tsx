@@ -3,7 +3,7 @@ import { Link, Stack } from "expo-router";
 import { Container } from "@/components/ui/Container";
 import { Text } from "@/components/ui/Text";
 
-export default function NotFoundScreen() {
+const NotFoundScreen = () => {
   return (
     <>
       <Stack.Screen options={{ title: "Oops!" }} />
@@ -15,4 +15,6 @@ export default function NotFoundScreen() {
       </Container>
     </>
   );
-}
+};
+
+export default NotFoundScreen;

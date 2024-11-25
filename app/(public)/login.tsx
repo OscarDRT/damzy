@@ -1,18 +1,44 @@
+import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
-import { Image } from "expo-image";
+import { Text } from "@/components/ui/Text";
+import { useTheme } from "@/hooks/useTheme";
+import { scale } from "@/utils/responsive";
+import { useOAuth } from "@clerk/clerk-expo";
+import { ChevronRight } from "lucide-react-native";
 
-const blurhash = "LEHV6nWB2yk8pyo0adR*.7kCMdnj";
+const LoginScreen = () => {
+  const { colors } = useTheme();
+  const { startOAuthFlow: googleAuth } = useOAuth({ strategy: "oauth_google" });
 
-export default function Login() {
+  const handleGoogleLogin = async () => {
+    try {
+      const { createdSessionId, setActive } = await googleAuth();
+      console.log("googleAuth createdSessionId", createdSessionId);
+
+      if (createdSessionId) {
+        setActive!({ session: createdSessionId });
+      }
+    } catch (error) {
+      console.error("googleAuth error", error);
+    }
+  };
+
   return (
-    <Container safeArea={false} paddingHorizontal="none">
-      <Image
-        style={{ width: "100%", height: 350 }}
-        source={{ uri: "https://picsum.photos/seed/696/3000/2000" }}
-        placeholder={{ blurhash }}
-        contentFit="cover"
-        transition={10000}
-      />
+    <Container justifyContent="center" alignItems="center" gap="l">
+      <Text variant="title3">How would you like to login?</Text>
+
+      <Card
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+        width="100%"
+        onPress={handleGoogleLogin}
+      >
+        <Text>Continue with Google</Text>
+        <ChevronRight color={colors.mutedForeground} size={scale(17)} />
+      </Card>
     </Container>
   );
-}
+};
+
+export default LoginScreen;

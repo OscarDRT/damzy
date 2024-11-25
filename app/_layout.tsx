@@ -64,12 +64,23 @@ const InitalLayout = () => {
 
     const inTabsGroup = segments[0] === "(private)";
 
-    if (isSignedIn && inTabsGroup) {
-      router.replace("/(private)");
+    if (isSignedIn && !inTabsGroup) {
+      router.replace("/(private)/(tabs)/home");
     } else if (!isSignedIn && inTabsGroup) {
       router.replace("/(public)");
     }
   }, [isSignedIn]);
+
+  useEffect(() => {
+    if (user && user.user) {
+      Sentry.setUser({
+        email: user.user.emailAddresses[0].emailAddress,
+        id: user.user.id,
+      });
+    } else {
+      Sentry.setUser(null);
+    }
+  }, [user]);
 
   return <Slot />;
 };
